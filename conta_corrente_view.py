@@ -1,5 +1,4 @@
 from conta_corrente import Conta_Corrente
-
 class Conta_Corrente_View:
     
     def exibir_saldo_disponivel_para_saque(self, conta_corrente: Conta_Corrente):

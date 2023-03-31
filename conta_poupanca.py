@@ -12,19 +12,20 @@ class Conta_Poupanca(Conta):
     def taxa_de_rendimento_ao_anoSet(self, taxa_de_rendimento_ao_ano):
         self.taxa_de_rendimento_ao_ano = taxa_de_rendimento_ao_ano
 
-    
     def depositar(self, valor: str):
         validacao = Validacao_Valor()
-
-        if validacao.valida_valor(valor)== True:            
+        result = validacao.valida_valor(valor)
+        
+        if result == True:            
             valor_a_ser_depositado = float(valor)
             self.saldo_atual += valor_a_ser_depositado
             return "[ Deposito realizado com sucesso! ]"
         else:
-            return "[ ERRO: Valor inválido ]"
+            return result
     
     def sacar(self, valor: str):
         validacao = Validacao_Valor()
+        result = validacao.valida_valor(valor)
         
         if validacao.valida_valor(valor) == True: 
             valor_a_ser_sacado = float(valor)
@@ -35,7 +36,7 @@ class Conta_Poupanca(Conta):
             else:
                 return "[ Saldo insuficiente ]"
         else:
-            return "[ ERRO: Valor inválido ]"
+            return result
         
     def calcular_rendimento(self, periodo):
         rendimento = self.saldo_atual * (self.taxa_de_rendimento_ao_ano / 100)

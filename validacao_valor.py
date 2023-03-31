@@ -6,9 +6,9 @@ class Validacao_Valor:
             if valor >= 0:
                 return True
             else:
-                return False
+                return "[ ERRO: Valor negativo ]"
             
         except ValueError as ve:
-            return "[ ERRO: Valor inválido ]"
+            return "[ ERRO: Valor não é numérico]"
         
     

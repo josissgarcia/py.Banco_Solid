@@ -2,8 +2,8 @@ from abc import abstractmethod
 
 class Conta:
     def __init__(self, id_conta:int, saldo_atual:float) :
-        self.id_conta: int = id_conta
-        self.saldo_atual: float = saldo_atual
+        self.id_conta = id_conta
+        self.saldo_atual = saldo_atual
         
     def id_contaGet(self):
         return self.id_conta

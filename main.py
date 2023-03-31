@@ -3,12 +3,13 @@ from conta_poupanca import Conta_Poupanca
 from conta_corrente import Conta_Corrente
 from conta_poupanca_view import Conta_Poupanca_View
 from conta_corrente_view import Conta_Corrente_View
+from conta import Conta
 
 def main():
     
     conta_corrente = Conta_Corrente (id_conta=2, saldo_atual=500.00, limite_cheque_especial=1000.00)
     consultar_saldo_corrente = Conta_Corrente_View()
-    
+   
     poupanca = Conta_Poupanca(id_conta=1, saldo_atual=2500.00, taxa_de_rendimento_ao_ano= 15.00)
     consultar_saldo_poupanca = Conta_Poupanca_View()
 

@@ -12,19 +12,20 @@ class Conta_Corrente(Conta):
     def limite_cheque_especialSet(self, limite_cheque_especial):
         self.limite_cheque_especial = limite_cheque_especial  
 
-    
     def depositar(self, valor: str):
         validacao = Validacao_Valor()
+        result = validacao.valida_valor(valor)
             
         if validacao.valida_valor(valor) == True:
             valor_a_ser_depositado = float(valor)
             self.saldo_atual += valor_a_ser_depositado
             return "[ Deposito realizado com sucesso! ]"
         else:
-            return "[ ERRO: Valor inválido ]"
+            return result
     
     def sacar(self, valor: str):
         validacao = Validacao_Valor()
+        result = validacao.valida_valor(valor)
         
         if validacao.valida_valor(valor) == True:
             valor_a_ser_sacado = float(valor)
@@ -38,4 +39,4 @@ class Conta_Corrente(Conta):
                 return "[ Saldo insuficiente para saque ]"
             
         else:
-            return "[ ERRO: Valor inválido ]"        
+            return result     
